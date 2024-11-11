@@ -39,5 +39,60 @@ function converti() {
     document.getElementById("risultato").innerHTML = numero.toString(baseFinale);
 
 }
+function pescaCarta() {
+    // Array delle carte della Briscola (stesso mazzo che abbiamo creato prima)
+    const carteBriscola = [
+      { seme: "Coppe", valore: "1" },
+      { seme: "Coppe", valore: "2" },
+      { seme: "Coppe", valore: "3" },
+      { seme: "Coppe", valore: "4" },
+      { seme: "Coppe", valore: "5" },
+      { seme: "Coppe", valore: "6" },
+      { seme: "Coppe", valore: "7" },
+      { seme: "Coppe", valore: "Fante" },
+      { seme: "Coppe", valore: "Cavallo" },
+      { seme: "Coppe", valore: "Re" },
 
+      { seme: "Denari", valore: "1" },
+      { seme: "Denari", valore: "2" },
+      { seme: "Denari", valore: "3" },
+      { seme: "Denari", valore: "4" },
+      { seme: "Denari", valore: "5" },
+      { seme: "Denari", valore: "6" },
+      { seme: "Denari", valore: "7" },
+      { seme: "Denari", valore: "Fante" },
+      { seme: "Denari", valore: "Cavallo" },
+      { seme: "Denari", valore: "Re" },
 
+      { seme: "Spade", valore: "1" },
+      { seme: "Spade", valore: "2" },
+      { seme: "Spade", valore: "3" },
+      { seme: "Spade", valore: "4" },
+      { seme: "Spade", valore: "5" },
+      { seme: "Spade", valore: "6" },
+      { seme: "Spade", valore: "7" },
+      { seme: "Spade", valore: "Fante" },
+      { seme: "Spade", valore: "Cavallo" },
+      { seme: "Spade", valore: "Re" },
+
+      { seme: "Bastoni", valore: "1" },
+      { seme: "Bastoni", valore: "2" },
+      { seme: "Bastoni", valore: "3" },
+      { seme: "Bastoni", valore: "4" },
+      { seme: "Bastoni", valore: "5" },
+      { seme: "Bastoni", valore: "6" },
+      { seme: "Bastoni", valore: "7" },
+      { seme: "Bastoni", valore: "Fante" },
+      { seme: "Bastoni", valore: "Cavallo" },
+      { seme: "Bastoni", valore: "Re" }
+    ];
+
+    // Genera un indice casuale tra 0 e la lunghezza dell'array carteBriscola - 1
+    const indiceCasuale = Math.floor(Math.random() * carteBriscola.length);
+    
+    // Ottieni la carta corrispondente all'indice casuale
+    const cartaPesca = carteBriscola[indiceCasuale];
+
+    // Mostra la carta (seme e valore) nel risultato
+    document.getElementById("risultato").innerHTML = `Carta pescata: ${cartaPesca.valore} di ${cartaPesca.seme}`;
+}
