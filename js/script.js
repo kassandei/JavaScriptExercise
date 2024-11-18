@@ -96,3 +96,65 @@ function pescaCarta() {
     // Mostra la carta (seme e valore) nel risultato
     document.getElementById("risultato").innerHTML = `Carta pescata: ${cartaPesca.valore} di ${cartaPesca.seme}`;
 }
+
+
+
+function parole() {
+        person = [];
+        for(let i = 0; i < 5; i++) 
+            person[i] = prompt("STRINGA CAPO");
+
+        person.sort(myOrder);
+
+        document.getElementById("risultato").innerHTML = person;
+
+
+
+}
+
+function myOrder(a, b) {
+    if(a[1] < b[1]) return -1;
+    if(a[1] > b[1]) return 1;
+    if(a[3] < b[3]) return -1;
+    if(a[3] > b[3]) return 1;
+
+    return 1;
+}
+
+let operatore;
+let input;
+let inputcopy;
+function input0() {
+    input += "0";
+}
+
+function input1() {
+    input += "1";
+}
+function multi() {
+    inputcopy = input;
+    operatore = "*";
+    input = "";
+}
+function add() {
+    operatore = "+";
+    input = "";
+}
+
+
+function calcolatriceBinaria() {
+    let numero = inputcopy;
+    //numero = parseInt(numero, 2);
+
+    let numero2 = input;
+    //numero2 = parseInt(numero2, 2);
+
+    let risultato;    
+    if(operatore == "+") 
+        risultato = numero + numero2;
+    else
+        risultato = numero * numero2;
+    
+    document.getElementById("risultato").innerHTML = risultato.toString(2);
+
+}
