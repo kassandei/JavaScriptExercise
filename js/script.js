@@ -189,3 +189,29 @@ function codifica() {
     }
     document.getElementById("risultato").innerHTML = output;
 }
+
+function over() {
+    let imgUno = document.getElementById("one");
+    let imgTwo = document.getElementById("two");
+
+    let tempSrc = imgUno.src;
+    imgUno.src = imgTwo.src;
+    imgTwo.src = tempSrc;
+}
+
+let i = 0;
+function colors() {   
+    const froc = ["red", "green", "yellow"];
+    let a = document.getElementById("text");
+    if (i < 2) {
+        a.style.color = froc[i++];
+        a.style.marginLeft + 10;
+    }
+    else
+        i = 0;
+}
+
+
+function intervallo() {
+    setInterval(colors, 100);
+}
