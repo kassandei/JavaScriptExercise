@@ -122,39 +122,70 @@ function myOrder(a, b) {
 }
 
 let operatore;
-let input;
-let inputcopy;
+let input = ""; // Initialize input to be an empty string
+let inputcopy = "";
+
 function input0() {
     input += "0";
+    document.getElementById("input2").innerHTML += "0";  
 }
 
 function input1() {
     input += "1";
+    document.getElementById("input2").innerHTML += "1";  
+
 }
+
 function multi() {
+    document.getElementById("input").innerHTML = input;  
+    document.getElementById("input2").innerHTML = "";
     inputcopy = input;
     operatore = "*";
     input = "";
 }
+
 function add() {
+    document.getElementById("input").innerHTML = input;  
+    document.getElementById("input2").innerHTML = "";
+    inputcopy = input;
     operatore = "+";
     input = "";
 }
 
+function cancella() {
+    input = "";
+    inputcopy = "";
+    operatore = "";
+    document.getElementById("input").innerHTML = "";  
+    document.getElementById("input2").innerHTML = "";
+    document.getElementById("risultato").innerHTML = "";
+}
 
 function calcolatriceBinaria() {
-    let numero = inputcopy;
-    //numero = parseInt(numero, 2);
-
-    let numero2 = input;
-    //numero2 = parseInt(numero2, 2);
-
-    let risultato;    
-    if(operatore == "+") 
-        risultato = numero + numero2;
-    else
-        risultato = numero * numero2;
+    let numero = parseInt(inputcopy, 2);  
+    let numero2 = parseInt(input, 2);     
     
-    document.getElementById("risultato").innerHTML = risultato.toString(2);
+    let risultato;
 
+ 
+    if (operatore == "+") {
+        risultato = numero + numero2;
+    } else if (operatore == "*") {
+        risultato = numero * numero2;
+    }
+
+    
+    document.getElementById("risultato").innerHTML = risultato.toString(2);  
+}
+
+
+function codifica() {
+    let input = document.getElementById("input").value; 
+    let output = new String("");
+    let i = 0;
+    while(i != input.length) {
+        output += String.fromCharCode(input.charCodeAt(i) + 1);
+        i++;
+    }
+    document.getElementById("risultato").innerHTML = output;
 }
