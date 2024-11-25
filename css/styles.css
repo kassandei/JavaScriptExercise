@@ -20,4 +20,23 @@
     flex: 33.33%;
     padding: 5px;
   }
+
+  img { 
+    width: 250px;
+    height: 250px;
+  }
   
+
+
+#one, #two {
+    width: 200px;
+    height: 200px;
+}
+
+#image-container {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
